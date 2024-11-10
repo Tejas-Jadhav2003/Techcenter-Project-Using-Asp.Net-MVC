@@ -1,0 +1,518 @@
+﻿@model sagar.mobile.shopy.business.Models.Sales
+
+@{
+    ViewBag.Title = "Sales";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Sales</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+
+    <style>
+        .Hide {
+            display: none;
+        }
+    </style>
+    <style media="print">
+
+        body {
+            visibility: hidden;
+            font-size: 10pt;
+        }
+
+        #Print {
+            visibility: visible;
+            
+        }
+
+        .Hide {
+            display: block;
+        }
+
+        .NoPrint {
+            display: none;
+        }
+        #Customer_Name,
+        #Address {
+            border: none !important;
+        }
+        
+    </style>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light NoPrint" style="background-color: rgb(232, 232, 232);">
+        <a class="navbar-brand ml-sm-3" href="/Home/Dashbord">Sager Mobile Shopee</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <ul class="navbar-nav mr-sm-3">
+                    <li class="nav-item active mr-sm-2">
+                        <a class="nav-link btn btn-light" href="/Home/Dashbord">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active mr-sm-2">
+                        <a class="nav-link btn btn-light" href="/Purchase/Purchase">Purchase<span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item active mr-sm-2">
+                        <a class="nav-link btn btn-light" href="#">Sale <span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item active mr-sm-2">
+                        <a class="nav-link btn btn-light" href="/Stock/Stock">Stock</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="/Home/Index" style="font-size:20px;color:red;">Logout<span class="bi bi-box-arrow-in-right"></span></a>
+                    </li>
+                </ul>
+
+
+            </form>
+        </div>
+    </nav>
+
+    <div class="container border border-1 mt-3">
+        <div class="text-center NoPrint" style="background-color: rgb(232, 232, 232);padding:10px;margin-top:10px">Billing</div>
+   
+        <div class="row responsive NoPrint">
+            <div class="text-center mb-3 fw-bold small">Select option for search</div>
+            <div class="col-sm-4"></div>
+            <div class="col form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="searchAll">
+                <label class="form-check-label" for="">All</label>
+            </div>
+
+            <div class="col form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="searchCompany">
+                <label class="form-check-label" for="">Company</label>
+            </div>
+            <div class="col form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="searchModel">
+                <label class="form-check-label" for="">Model</label>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+        <div class="row no-gutters mt-3 align-items-center justify-content-center mb-3">
+            <div class="col col-md-4">
+                <input class="form-control border border-1 rounded-pill pr-5 shadow " type="search" value="" id="searchInput" placeholder="Search">
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-outline-light text-dark border-0 rounded-pill ml-n5" type="button" id="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+        <hr class="mt-5 NoPrint">
+        <div class="responsive NoPrint">
+            <P>Search Table</P>
+            <table class="table table-bordered" id="searchTable">
+                <thead class="" style="background-color: rgb(232, 232, 232) ">
+                    <tr>
+                        
+                        <th scope="col" class="text-center fw-bold ">#</th>
+                        <th scope="col" class="text-center fw-bold ">Company Name</th>
+                        <th scope="col" class="text-center fw-bold ">Model Name</th>
+
+                        <th scope="col" class="text-center fw-bold ">Warranty</th>
+                        <th scope="col" class="text-center fw-bold ">Available Qty</th>
+                        <th scope="col" class="text-center fw-bold ">Price</th>
+                        <th scope="col" class="text-center fw-bold ">Add Qty</th>
+                        <th scope="col" class="text-center fw-bold ">Cancel</th>
+                        <th scope="col" class="text-center fw-bold ">Add</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody text-center" id="resultTable">
+                </tbody>
+            </table>
+
+        </div>
+        <hr class="mt-0">
+        <div class="responsive border border-1 p-2" id="Print">
+            <!-- Header -->
+            <div class="row mb-0 Hide">
+                <div class="col-md-12 text-center">
+                    <h1>Sager Mobile Shop</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5">
+                    <h2>Bill Invoice</h2>
+                    <div class="form-group">
+                        <label for="customerName">Customer Name :</label>
+                        <input type="text" class="form-control-sm border border-1" id="Customer_Name" >
+                    </div>
+                    <div class="form-group mt-0">
+                        <label for="">Address :</label>
+                        <input type="text" class="form-control-sm border border-1" id="Address" >
+                    </div>
+                </div>                
+                <div class="col text-right">
+                    <h5>Date : <span id="currentDate"></span></h5>
+                    <h5 class="mt-4">BillNo : <span class="text-danger" id="BillNo"></span></h5>
+                </div>
+            </div>
+
+            <table class="table table-hover " id="AppendTb">
+                <thead class="" style="background-color: rgb(232, 232, 232) ">
+                    <tr>
+                        <th scope="col" class="text-center fw-bold small Print">#</th>
+                        <th scope="col" class="text-center fw-bold small Print">Id</th>
+                        <th scope="col" class="text-center fw-bold small Print">Company Name</th>
+                        <th scope="col" class="text-center fw-bold small NoPrint">Model Name</th>
+                   
+                        <th scope="col" class="text-center fw-bold small NoPrint">Warranty</th>
+                        <th scope="col" class="text-center fw-bold small Print">Price</th>
+                        <th scope="col" class="text-center fw-bold small Print">Add Qty</th>
+                        <th scope="col" class="text-center fw-bold small Print">Amount</th>
+                        <th scope="col" class="text-center fw-bold small NoPrint">Cancel</th>
+
+                    </tr>
+                </thead>
+                <tbody class="stbody text-center">
+                    @*<tr>
+                            <td>Samsung</td>
+                            <td>s23</td>
+                            <td>5161665446654</td>
+                            <td>1Year</td>
+                            <td>10</td>
+                            <td>1,50,000.00</td>
+                        </tr>*@
+                </tbody>
+            </table>
+            <div class="row mt-2">
+                <div class="col-10"></div>
+                <div class="col-2">
+                    <label><b>Sub Total :</b></label> <label id="subTotalLabel"></label><br>
+                    <label><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST : </b></label><label id="gstLabel">&nbsp;</label><br>
+                    <label><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Total : </b></label><label id="totalLabel">&nbsp;</label>
+                </div>
+            </div>
+            <div class="text-right NoPrint"><input type="button" name="Save" class="btn btn-primary btn-sm" value="Save" onclick="AddBill();" /></div>
+        </div>
+    </div>
+
+
+
+
+   
+
+
+
+
+
+</body>
+</html>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+<script src="~/Scripts/notify.min.js"></script>
+
+<script>
+    $(function () {
+        $('#datepicker').datepicker({
+            format: 'dd/mm/yyyy'
+        });
+    });
+
+    // Get the checkboxes and the search button
+    const searchAll = document.getElementById('searchAll');
+    const searchIMEI = document.getElementById('searchIMEI');
+    const searchCompany = document.getElementById('searchCompany');
+    const searchModel = document.getElementById('searchModel');
+    const searchButton = document.getElementById('searchButton');
+
+    $(document).ready(function () {
+        GenerateBillNo();
+        // Search Option
+        $("#searchButton").click(function () {
+            if (searchAll.checked) {
+                alert('All option clicked');
+            }
+         
+            else if (searchCompany.checked) {
+                var company = $("#searchInput").val();
+                if ($('#searchInput').val().trim() != "") {
+                    $.ajax({
+                        url: "/Sales/searchCompany",
+                        data: { company: company },
+                        type: 'GET',
+                        contentType: "application/json;charset=utf-8",
+                        success: function (result) {
+                            var resultTable = $("#resultTable");
+                            resultTable.empty();
+                            $.each(result, function (key, data) {
+
+
+                                var row = "<tr><td>" + data.id +"</td><td>" + data.company_name + "</td><td>" + data.model_no + "</td><td>" + data.warranty + "</td><td>" + data.qty + "</td><td>" + data.sale_price + "</td><td> <input type='number' min='1' placeholder='Qty'class='form-control form-control-sm '> </td><td><a href='#' onclick='cutRow(this)'><i class='bi bi-x-circle' style='color:red; font-size:20px;'></i><a></td><td><input type='button' class='btn btn-primary btn-sm' value='Add' id='appendData' onclick='bindButton(this)' /></td></tr>";
+                                resultTable.append(row);
+
+                            });
+                        }
+                    })
+                }
+                else {
+                    invalidData();
+                }
+
+            }
+            else if (searchModel.checked) {
+                var Model = $("#searchInput").val();
+                if ($('#searchInput').val().trim() != "") {
+                    $.ajax({
+                        url: "/Sales/searchModel",
+                        data: { Model: Model },
+                        type: 'GET',
+                        contentType: "application/json;charset=utf-8",
+                        success: function (result) {
+                            var resultTable = $("#resultTable");
+                            resultTable.empty();
+                            $.each(result, function (key, data) {
+
+
+                                var row = "<tr><td>" + data.id + "</td><td>" + data.company_name + "</td><td>" + data.model_no + "</td><td>" + data.warranty + "</td><td>" + data.qty + "</td><td>" + data.sale_price + "</td><td> <input type='number' min='1' placeholder='Qty'class='form-control form-control-sm '> </td><td><a href='#' onclick='cutRow(this)'><i class='bi bi-x-circle' style='color:red; font-size:20px;'></i><a></td><td><input type='button' class='btn btn-primary btn-sm' value='Add' id='appendData' onclick='bindButton(this)' /></td></tr>";
+                                resultTable.append(row);
+
+                            });
+                        }
+                    })
+                }
+                else {
+                    invalidData();
+                }
+            }
+            else {
+                alert('please checked search option!');
+            }
+        });
+
+
+
+    });
+
+
+    function GenerateBillNo() {
+     
+        $.ajax({
+            url: "/Sales/GetBillNo",
+       //     data: JSON.stringify(empObj),
+            type: "GET",
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+               // alert(result);
+                $("#BillNo").html(result);
+            },
+            error: function (errormessage) {
+                alert(errormessage.responseText);
+            }
+        });
+    }
+
+
+
+
+    function getPrint() {
+        window.print();
+    }
+
+
+
+
+    // IMEI NO 123456789984562
+
+
+
+
+    function cutRow(link) {
+        var p = link.parentNode.parentNode;
+        p.parentNode.removeChild(p);
+    }
+
+    //validation
+
+    function invalidData() {
+        // alert("Invalid Data");
+        $.notify("Invalid Data ", {
+            globalPosition: "top center",
+            className: "error"
+        });
+    }
+
+    function validData() {
+        // alert("Invalid Data");
+        $.notify("Data Save successfully...", {
+            globalPosition: "top center",
+            className: "success"
+        });
+    }
+
+    // Append Data
+    function bindButton(button) {
+        var qtyInput = $(button).closest('tr').find('input[type="number"]');
+        var qty = parseInt(qtyInput.val());
+        var stock = parseInt($(button).closest('tr').find('td:nth-child(5)').text());
+
+        if (qty <= stock) {
+            var id = $(button).closest('tr').find('td:nth-child(1)').text();
+            var company = $(button).closest('tr').find('td:nth-child(2)').text();
+            var model = $(button).closest('tr').find('td:nth-child(3)').text();
+
+            var warranty = $(button).closest('tr').find('td:nth-child(4)').text();
+
+            var price = $(button).closest('tr').find('td:nth-child(6)').text();
+            var addQty = qty;
+            var amount = qty * parseFloat(price);
+            
+            var lastRow = $('#AppendTb tbody tr:last');
+            var incrementValue = parseInt(lastRow.find('td:nth-child(1)').text()) + 1 || 1;
+
+            var row = "<tr>" +
+                "<td class='text-center'>" + incrementValue + "</td>" +
+                "<td class='text-center'>" + id + "</td>" +
+                "<td>" + company + "</td>" +
+                "<td class='NoPrint'>" + model + "</td>" +
+             
+                "<td class='NoPrint'>" + warranty + "</td>" +
+                "<td id='price'>" + price + "</td>" +
+                "<td>" + addQty + "</td>" +
+                "<td id='amount'>" + amount + "</td>" +
+                "<td class='NoPrint'><button class='btn btn-danger btn-sm' onclick='cutRow(this)'>Remove</button></td>" +
+                "</tr>";
+
+            $('#AppendTb tbody').append(row);
+            incrementValue++; // Increment the value for the next row
+
+            updateSubTotal();
+        } else {
+            alert("Please enter a valid quantity.");
+        }
+
+    }
+
+    function updateSubTotal() {
+        var totalAmount = 0;
+        var gstAmount = 0;
+        var totalAmountWithGST = 0;
+        $('#AppendTb tbody tr').each(function () {
+            var amount = parseFloat($(this).find('td#amount').text());
+            totalAmount += amount;
+        });
+
+        var gstPercentage = 18; // Assuming GST percentage is 18%
+        var gstAmount = (gstPercentage / 100) * totalAmount;
+        var totalAmountWithGST = totalAmount + gstAmount;
+
+        var formattedTotal = totalAmount.toFixed(2);
+        var formattedGST = gstAmount.toFixed(2);
+        var formattedTotalWithGST = totalAmountWithGST.toFixed(2);
+
+        $('#subTotalLabel').text(formattedTotal);
+        $('#gstLabel').text(formattedGST);
+        $('#totalLabel').text(formattedTotalWithGST);
+    }
+
+    // load Date 
+    document.addEventListener('DOMContentLoaded', function () {
+        var currentDateElement = document.getElementById('currentDate');
+        var currentDate = new Date();
+
+        var day = currentDate.getDate().toString().padStart(2, '0');
+        var month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based
+        var year = currentDate.getFullYear();
+
+        var formattedDate = day + '/' + month + '/' + year;
+        currentDateElement.textContent = formattedDate;
+    });
+
+
+
+
+    function getPersonList() {
+       
+        var productBills = [];
+
+        $("#AppendTb tbody tr").each(function () {
+            var cells = $(this).find('td');
+
+     
+            var purchaseId = $(cells[1]).text();
+            var warrenty = $(cells[4]).text();
+            var price = $(cells[5]).text();
+            var qty = $(cells[6]).text();
+            var total = $(cells[7]).text();
+
+
+            var productBill = {
+                purchaseId: purchaseId,
+                warrenty: warrenty, 
+                price: price,
+                qty: qty,
+                total: total
+            };
+
+            productBills.push(productBill);
+        });
+
+        return productBills;
+    }
+
+
+    // Bill Create 
+    function AddBill() {     
+        var billDetails = {
+            billNo: $('#BillNo').text(),
+            customerName: $('#Customer_Name').val(),
+            address: $('#Address').val(),
+ 
+            subTotal: $('#subTotalLabel').text(),
+            gst: $('#gstLabel').text(),
+            total: $('#totalLabel').text(),
+
+            date: $('#currentDate').text(),
+
+            productBills: getPersonList()
+
+        };
+        $.ajax({
+            url: "/Sales/AddBill",
+            data: JSON.stringify(billDetails),
+            type: "POST",
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                // alert(result);     
+                
+                window.print();
+                validData();
+            },
+            error: function (errormessage) {
+                alert(errormessage.responseText);
+            }
+        });
+    }
+
+
+
+</script>
+
+
+
+
