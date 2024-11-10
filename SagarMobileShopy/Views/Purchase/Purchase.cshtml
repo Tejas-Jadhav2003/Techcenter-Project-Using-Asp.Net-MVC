@@ -148,7 +148,7 @@
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary btn-sm" onclick="Add();" id="Add">Add +</button>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="addProduct();" id="Add">Add +</button>
                     <button type="button" class="btn btn-success btn-sm" onclick="Update();" id="btnUpdate" style="display:none;">Update +</button>
                     <button type="button" class="btn btn-danger btn-sm" onclick="clearTextBox();" data-bs-dismiss="modal">Close</button>
                     
@@ -256,8 +256,42 @@
         });
     }
 
+    function addProduct() {
+        var res = validate();
+        if (res == false) {
+            return false;
+        }
+        var product = {
+            company_name: $('#company_name').val(),
+            model_no: $('#model_no').val(),
+            imei_no: $('#imei_no').val(),
+            features: $('#features').val(),
+            warranty: $('#warranty').val(),
+            qty: $('#qty').val(),
+            purchase_price: $('#purchase_price').val(),
+            sale_price: $('#sale_price').val(),
+            total: $('#total').val()
+        };
 
-    //Add Data Function
+        $.ajax({
+            url: "/Purchase/AddPurchase", // Your server-side method to handle adding
+            type: "POST",
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify(product),
+            success: function (result) {
+                alert("Product added successfully");     
+                clearTextBox();
+                LoadData(); // Reload the data (assuming you have a method to reload the table)
+            },
+            error: function (errormessage) {
+                alert(errormessage.responseText);
+            }
+        });
+    }
+
+
+    //Add user Data Function
     function AddToUser() {
         // Validate your form fields
         Validation();

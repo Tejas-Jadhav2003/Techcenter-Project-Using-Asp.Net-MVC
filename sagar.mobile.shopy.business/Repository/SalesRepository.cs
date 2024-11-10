@@ -254,9 +254,9 @@ namespace sagar.mobile.shopy.business.Repository
 
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             finally
             {
