@@ -5,7 +5,16 @@ VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SagarMobileShopy", "SagarMobileShopy\SagarMobileShopy.csproj", "{680F136C-8C46-49DC-A42E-CBE6DE09D6BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sagar.mobile.shopy.business", "sagar.mobile.shopy.business\sagar.mobile.shopy.business.csproj", "{9F979412-E888-419F-889C-A1189D22B1A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sagar.mobile.shopy.business", "sagar.mobile.shopy.business\sagar.mobile.shopy.business.csproj", "{9F979412-E888-419F-889C-A1189D22B1A2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{0F6EA2F9-6638-49B3-BA08-7AD18DFD20FA}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\images\Dashbord.png = ..\..\images\Dashbord.png
+		..\..\images\login .png = ..\..\images\login .png
+		..\..\images\purchase,delete,update MobileProduct.png = ..\..\images\purchase,delete,update MobileProduct.png
+		..\..\images\Sale Mobile.png = ..\..\images\Sale Mobile.png
+		..\..\images\stock.png = ..\..\images\stock.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
