@@ -34,7 +34,8 @@ This project is ideal for small to medium-sized mobile shops to manage product i
 ## Screenshots
 
 (Add relevant screenshots of the application here)
-
+### 1. Product Management
+![Product Management Screenshot](C:\Users\Tejas Jadhav\Pictures\Screenshots)
 ---
 
 ## Installation
