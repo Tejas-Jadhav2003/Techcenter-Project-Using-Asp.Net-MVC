@@ -4,9 +4,10 @@
 
 - **Mobile Data Management**: Add, update, delete, and retrieve details of mobile products.
 - **Sales Reporting**: Generate detailed reports for sales transactions.
+- **Bill Generation**: Create and print bills for customer purchases.
 - **Efficient Operations**: Simplifies daily operations like maintaining inventory, managing sales, and customer interactions.
 
-This project is ideal for small to medium-sized mobile shops to manage product inventories and track sales efficiently.
+This project is ideal for small to medium-sized mobile shops to manage product inventories, track sales, and generate bills efficiently.
 
 ---
 
@@ -17,6 +18,7 @@ This project is ideal for small to medium-sized mobile shops to manage product i
 - **Customer Management**: Manage customer details and interactions to improve service.
 - **Inventory Management**: Keep track of available mobile products and stock levels.
 - **Sales Transactions**: Process and record sales transactions, with the ability to view transaction histories.
+- **Bill Generation**: Generate bills for customer purchases and store bill details for future reference.
 
 ---
 
@@ -24,7 +26,7 @@ This project is ideal for small to medium-sized mobile shops to manage product i
 
 - **ASP.NET MVC**: The web application framework for building dynamic web pages.
 - **SQL Server**: The backend database used to store product, customer, and sales information.
-- **Entity Framework**: For handling database interactions.
+- **ADO.NET**: For handling database interactions and executing SQL queries directly.
 - **Bootstrap**: For responsive front-end design.
 
 ---
@@ -49,4 +51,3 @@ This project is ideal for small to medium-sized mobile shops to manage product i
 
    ```bash
    git clone https://github.com/Tejas-Jadhav2003/Techcenter-Project-Using-Asp.Net-MVC.git
-
