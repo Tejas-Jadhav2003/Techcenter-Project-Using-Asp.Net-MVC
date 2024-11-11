@@ -39,16 +39,16 @@ This project is ideal for small to medium-sized mobile shops to manage product i
 ![Login](SagarMobileShopy/ProjectImages/login.png)
 
 ### 1. Dashboard
-![Dashboard](SagarMobileShopy/ProjectImages/Dashbord.png))
+![Dashboard](SagarMobileShopy/ProjectImages/Dashbord.png)
 
 ### 3. Mobile Product Update
-![Mobile Product Update](images/purchase,delete,update MobileProduct.png)
+![Mobile Product Update](SagarMobileShopy/ProjectImages/purchase.png)
 
 ### 4. Sale Screen
-![Sale Mobile](images/Sale Mobile.png)
+![Sale Mobile](SagarMobileShopy/ProjectImages/Sale-Mobile.png)
 
 ### 5. Stock Management
-![Stock](images/stock.png)
+![Stock](SagarMobileShopy/ProjectImages/stock.png)
 
 ---
 
