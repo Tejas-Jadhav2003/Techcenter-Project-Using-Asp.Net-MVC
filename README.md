@@ -53,28 +53,18 @@ This project is ideal for small to medium-sized mobile shops to manage product i
 
 3.  **Set up the database:**
 
-Create a new SQL Server database.
-Update the connectionString in the Web.config file to match your SQL Server configuration.
-Run the project:
+- **Create a new SQL Server database.
+- **get Backup with MobileShopy.bak file
+- **Update the **connectionString** in the **Web.config** file to match your SQL Server configuration.
+4.  **Run the project:**
 
-Build and run the solution in Visual Studio.
-The application will launch in your default browser.
-Usage
-Manage Products: Navigate to the Products section to add, update, or delete mobile products.
-View Sales Reports: Navigate to the Sales Reports section to generate and view sales data.
-Manage Customers: Add and edit customer details from the Customer Management section.
-Contribution
-Feel free to fork the repository and submit pull requests. Contributions are welcome!
-
-Fork the repository.
-Create a new branch (git checkout -b feature-branch).
-Commit your changes (git commit -m 'Add a new feature').
-Push to the branch (git push origin feature-branch).
-Open a pull request.
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-Contact
-Project Owner: Tejas Jadhav
-LinkedIn: Tejas Jadhav
-GitHub: Tejas-Jadhav2003
+- **Build and run the solution in Visual Studio.
+- **The application will launch in your default browser.
+###Usage
+- **Manage Products:** Navigate to the Products section to add, update, or delete mobile products.
+- **View Sales Reports:** Navigate to the Sales Reports section to generate and view sales data.
+- **Manage Customers:** Add and edit customer details from the Customer Management section.
+###Contact
+- **Project Owner**: Tejas Jadhav
+- **LinkedIn**: [Tejas Jadhav](https://www.linkedin.com/in/tejas-jadhav-aa11a4252/)
+- **GitHub**: [Tejas-Jadhav2003](https://github.com/Tejas-Jadhav2003)
