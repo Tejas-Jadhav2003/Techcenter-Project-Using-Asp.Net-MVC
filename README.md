@@ -36,7 +36,7 @@ This project is ideal for small to medium-sized mobile shops to manage product i
 ## Screenshots
 
 ### 1. Dashboard
-![Dashboard](images/Dashbord.png)
+![Dashboard](ProjectImages/Dashbord.png))
 
 ### 2. Login Screen
 ![Login](images/login.png)
