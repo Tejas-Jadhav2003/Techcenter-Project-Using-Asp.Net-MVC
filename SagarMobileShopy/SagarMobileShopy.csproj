@@ -113,7 +113,7 @@
     <Content Include="Images\Realme.jpg" />
     <Content Include="Images\Vivo.jpg" />
     <Content Include="ProjectImages\Dashbord.png" />
-    <Content Include="ProjectImages\login .png" />
+    <Content Include="ProjectImages\login.png" />
     <Content Include="ProjectImages\purchase.png" />
     <Content Include="ProjectImages\Sale Mobile.png" />
     <Content Include="ProjectImages\stock.png" />
