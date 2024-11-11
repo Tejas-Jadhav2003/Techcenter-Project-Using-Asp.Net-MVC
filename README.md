@@ -47,7 +47,7 @@ This project is ideal for small to medium-sized mobile shops to manage product i
 ### 5. Stock Management
 ![Stock](SagarMobileShopy/ProjectImages/stock.png)
 
-### 4. Sale Invoice
+### 4. Search Mobile and Bill Invoice
 ![Sale Mobile](SagarMobileShopy/ProjectImages/Sale-Mobile.png)
 
 
