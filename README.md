@@ -61,4 +61,10 @@ This project is ideal for small to medium-sized mobile shops to manage product i
 
 - **Build and run the solution in Visual Studio.**
 
+---
 
+## Contact
+
+- **Project Owner**: Tejas Jadhav
+- **LinkedIn**: [Tejas Jadhav](https://www.linkedin.com/in/tejas-jadhav-aa11a4252/)
+- **GitHub**: [Tejas-Jadhav2003](https://github.com/Tejas-Jadhav2003)
