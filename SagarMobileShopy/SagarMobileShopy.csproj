@@ -112,10 +112,11 @@
     <Content Include="Images\Oppo.jpg" />
     <Content Include="Images\Realme.jpg" />
     <Content Include="Images\Vivo.jpg" />
+    <Content Include="ProjectImages\Bill.png" />
     <Content Include="ProjectImages\Dashbord.png" />
     <Content Include="ProjectImages\login.png" />
     <Content Include="ProjectImages\purchase.png" />
-    <Content Include="ProjectImages\Sale Mobile.png" />
+    <Content Include="ProjectImages\Sale-Mobile.png" />
     <Content Include="ProjectImages\stock.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
