@@ -51,3 +51,14 @@ This project is ideal for small to medium-sized mobile shops to manage product i
 
    ```bash
    git clone https://github.com/Tejas-Jadhav2003/Techcenter-Project-Using-Asp.Net-MVC.git
+2. **Open the project in Visual Studio.**
+3. **Set up the database:**
+   
+- **Create a new SQL Server database.
+- **Restore the database using the MobileShopy.bak file.
+- **Update the connectionString in the Web.config file to match your SQL Server configuration.
+4. **Run the project:**
+
+- **Build and run the solution in Visual Studio.
+
+
