@@ -33,9 +33,23 @@ This project is ideal for small to medium-sized mobile shops to manage product i
 
 ## Screenshots
 
-(Add relevant screenshots of the application here)
-### 1. Product Management
-![Product Management Screenshot](C:\Users\Tejas Jadhav\Pictures\Screenshots)
+## Screenshots
+
+### 1. Dashboard
+![Dashboard](images/Dashbord.png)
+
+### 2. Login Screen
+![Login](images/login.png)
+
+### 3. Mobile Product Update
+![Mobile Product Update](images/purchase,delete,update MobileProduct.png)
+
+### 4. Sale Screen
+![Sale Mobile](images/Sale Mobile.png)
+
+### 5. Stock Management
+![Stock](images/stock.png)
+
 ---
 
 ## Installation
