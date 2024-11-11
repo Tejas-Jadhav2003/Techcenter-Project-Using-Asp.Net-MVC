@@ -33,8 +33,6 @@ This project is ideal for small to medium-sized mobile shops to manage product i
 
 ## Screenshots
 
-## Screenshots
-
 ### 2. Login Screen
 ![Login](SagarMobileShopy/ProjectImages/login.png)
 
