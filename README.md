@@ -35,11 +35,11 @@ This project is ideal for small to medium-sized mobile shops to manage product i
 
 ## Screenshots
 
-### 1. Dashboard
-![Dashboard](images/Dashbord.png)
-
 ### 2. Login Screen
-![Login](images/login.png)
+![Login](SagarMobileShopy/ProjectImages/login.png)
+
+### 1. Dashboard
+![Dashboard](SagarMobileShopy/ProjectImages/Dashbord.png))
 
 ### 3. Mobile Product Update
 ![Mobile Product Update](images/purchase,delete,update MobileProduct.png)
